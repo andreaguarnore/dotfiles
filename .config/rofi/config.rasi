@@ -1,0 +1,80 @@
+/* Catpuccin (mocha) */
+/* https://github.com/catppuccin/rofi */
+
+configuration {
+    show-icons:      true;
+    display-drun:    "";
+    disable-history: false;
+}
+
+* {
+    font: "Fira Mono 12";
+    width: 600;
+
+    bg:      #100f0f;
+    ui:      #282726;
+    tx:      #cecdc3;
+    tx-2:    #878580;
+    tx-3:    #575653;
+}
+
+#window {
+    background-color: @bg;
+
+    border:       2px;
+    border-color: @ui;
+    padding:      10px 28px;
+}
+
+#mainbox {
+    border:  0;
+    padding: 0;
+}
+
+#inputbar {
+    children: [ entry ];
+    padding: 10px 0 0 0;
+}
+
+#entry {
+    text-color: @tx;
+    placeholder-color: @tx-3;
+}
+
+#textbox {
+    text-color: @tx;
+}
+
+#listview {
+    border:    0;
+    padding:   15px 0;
+    columns:   1;
+    lines:     8;
+    spacing:   8px;
+    scrollbar: false;
+}
+
+#element-icon {
+    padding: 0 8px 0 0;
+}
+
+#element.normal.normal {
+    background-color: @bg;
+    text-color:       @tx-2;
+}
+
+#element.selected.normal {
+    background-color: @bg;
+    text-color:       @tx;
+}
+
+#element.alternate.normal {
+    background-color: @bg;
+    text-color:       @tx-2;
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
