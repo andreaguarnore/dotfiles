@@ -90,6 +90,9 @@ local servers = {
       -- diagnostics = { disable = { 'missing-fields' } },
     },
   },
+  hls = {
+    filetypes = { 'haskell', 'lhaskell', 'cabal' },
+  }
 }
 
 -- Setup neovim lua configuration

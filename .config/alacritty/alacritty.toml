@@ -1,0 +1,50 @@
+[colors.bright]
+black = "#403e3c"
+blue = "#4385be"
+cyan = "#3aa99f"
+green = "#879a39"
+magenta = "#ce5d97"
+red = "#d14d41"
+white = "#fffcf0"
+yellow = "#d0a215"
+
+[colors.cursor]
+cursor = "#cdcdc3"
+text = "#100f0f"
+
+[colors.dim]
+black = "#403e3c"
+blue = "#205ea6"
+cyan = "#24837b"
+green = "#66800b"
+magenta = "#a02f6f"
+red = "#af3029"
+white = "#fffcf0"
+yellow = "#ad8301"
+
+[colors.normal]
+black = "#282726"
+blue = "#205ea6"
+cyan = "#24837b"
+green = "#66800b"
+magenta = "#a02f6f"
+red = "#af3029"
+white = "#fffcf0"
+yellow = "#ad8301"
+
+[colors.primary]
+background = "#100f0f"
+bright_foreground = "#878580"
+dim_foreground = "#878580"
+foreground = "#cdcdc3"
+
+[font]
+size = 12
+
+[font.normal]
+family = "Fira Mono"
+style = "Regular"
+
+[window.padding]
+x = 20
+y = 20
