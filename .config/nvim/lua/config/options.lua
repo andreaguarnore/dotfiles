@@ -1,46 +1,58 @@
--- Set <space> as the leader key
+-- Set <Space> as the leader key
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- Set highlight on search
-vim.o.hlsearch = false
-vim.o.incsearch = true
-
--- Sync clipboard between OS and Neovim
-vim.o.clipboard = "unnamedplus"
+-- Disable highlight on search
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 -- Save undo history
-vim.o.undofile = true
+vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Decrease update time
-vim.o.updatetime = 300
+vim.opt.updatetime = 300
+vim.opt.timeoutlen = 300
 
--- NOTE: make sure your terminal supports this
-vim.o.termguicolors = true
+-- Enable true color support in the terminal
+vim.opt.termguicolors = true
 
--- Block cursor
-vim.o.guicursor = ""
+-- Use block cursor
+vim.opt.guicursor = ""
+
+-- Always use sign column
+vim.opt.signcolumn = "auto:2"
 
 -- Relative line numbers
-vim.o.nu = true
-vim.o.relativenumber = true
+vim.opt.nu = true
+vim.opt.relativenumber = true
 
 -- Indentation
-vim.o.tabstop = 2
-vim.o.softtabstop = 2
-vim.o.shiftwidth = 2
-vim.o.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
+-- Configure how new splits are opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- Show whitespace
-vim.o.list = true
-vim.o.listchars = "trail:·,extends:›,precedes:‹"
+vim.opt.list = true
+vim.opt.listchars = "tab:» ,nbsp:␣,trail:·,extends:›,precedes:‹"
 
 -- Text wrap
-vim.o.wrap = false
+vim.opt.wrap = false
 
 -- Ruler
-vim.o.colorcolumn = "80"
+vim.opt.colorcolumn = "80"
+
+-- Minimum number of screen lines to keep above and below the cursor
+vim.opt.scrolloff = 8
+
+-- Enable mouse mode for resizing splits
+vim.opt.mouse = "a"
 
