@@ -19,6 +19,9 @@ return {
         }
       },
 
+      -- Status updates for LSP
+      { "j-hui/fidget.nvim", opts = {} },
+
       -- Additional Lua configuration
       { "folke/neodev.nvim", opts = {} },
     },

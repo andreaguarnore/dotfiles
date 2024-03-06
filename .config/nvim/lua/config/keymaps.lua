@@ -38,9 +38,6 @@ vim.keymap.set("i", "jk", "<Esc>")
 -- Easier way to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
--- Netrw
-vim.keymap.set("n", '<leader>ee', vim.cmd.Ex, { desc = "Netrw" })
-
 -- Diagnostics keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [d]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [d]iagnostic message" })
@@ -52,6 +49,9 @@ vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>")
 vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<CR>")
 vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<CR>")
+
+-- Quick toggles
+vim.keymap.set("n", "<leader>ow", "<cmd>set wrap!<CR>", { desc = "Toggle word [w]rap" })
 
 -- Save file
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")

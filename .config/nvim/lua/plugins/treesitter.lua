@@ -1,4 +1,5 @@
 return {
+
   -- Syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
@@ -32,5 +33,9 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end
   },
+
+  -- Context of the currently visible buffer contents
+  { "nvim-treesitter/nvim-treesitter-context", opts = {} },
+
 }
 

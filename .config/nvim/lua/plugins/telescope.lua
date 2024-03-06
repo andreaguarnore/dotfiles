@@ -12,8 +12,8 @@ return {
     },
     keys = {
       { "<leader>ff", "<cmd>Telescope find_files<CR>", mode = "n", desc = "Find [f]iles" },
-      { "<leader>fg", "<cmd>Telescope live_grep<CR>", mode = "n", desc = "Search by [g]rep" },
-      { "<leader>fG", "<cmd>Telescope git_files<CR>", mode = "n", desc = "Find [g]it files" },
+      { "<leader>sg", "<cmd>Telescope live_grep<CR>", mode = "n", desc = "Search by [g]rep" },
+      { "<leader>fg", "<cmd>Telescope git_files<CR>", mode = "n", desc = "Find [g]it files" },
     },
   }
 }
