@@ -25,9 +25,24 @@ return {
       -- Additional Lua configuration
       { "folke/neodev.nvim", opts = {} },
     },
-    diagnostics = {
-      underline = true,
-      update_in_insert = true,
+    opts = {
+      diagnostics = {
+        underline = true,
+        update_in_insert = false,
+      },
+      inlay_hints = {
+        enabled = false,
+      },
+    },
+    keys = {
+      { "gd", function() require("telescope.builtin").lsp_definitions() end, desc = "Goto [d]efinition" },
+      { "gr", "<Cmd>Telescope lsp_references<cr>", desc = "Goto [r]eferences" },
+      { "gD", vim.lsp.buf.declaration, desc = "Goto [D]eclaration" },
+      { "gI", function() require("telescope.builtin").lsp_implementations() end, desc = "Goto [I]mplementation" },
+      { "gy", function() require("telescope.builtin").lsp_type_definitions() end, desc = "Goto t[y]pe definition" },
+      { "K", vim.lsp.buf.hover, desc = "Hover documentation" },
+      { "<leader>ca", vim.lsp.buf.code_action, desc = "Code [a]ction" },
+      { "<leader>cr", vim.lsp.buf.rename, desc = "[r]ename variable" },
     },
   },
 }

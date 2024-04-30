@@ -35,7 +35,13 @@ return {
   },
 
   -- Context of the currently visible buffer contents
-  { "nvim-treesitter/nvim-treesitter-context", opts = {} },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    opts = {
+      max_lines = 1,
+      min_window_height = 30,
+    },
+  },
 
 }
 

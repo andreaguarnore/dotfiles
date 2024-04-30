@@ -34,9 +34,9 @@ yellow = "#ad8301"
 
 [colors.primary]
 background = "#100f0f"
-bright_foreground = "#878580"
-dim_foreground = "#878580"
 foreground = "#cdcdc3"
+dim_foreground = "#878580"
+bright_foreground = "#878580"
 
 [font]
 size = 12
