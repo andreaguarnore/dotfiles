@@ -24,7 +24,7 @@ vim.opt.termguicolors = true
 vim.opt.guicursor = ""
 
 -- Always use sign column
-vim.opt.signcolumn = "auto:2"
+vim.opt.signcolumn = "yes:1"
 
 -- Relative line numbers
 vim.opt.nu = true

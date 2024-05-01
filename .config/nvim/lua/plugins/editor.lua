@@ -1,38 +1,43 @@
 return {
 
-  -- Highlights and searches for todo comments
   {
     "folke/todo-comments.nvim",
-    opts = { signs = false },
+    cmd = { "TodoTrouble", "TodoTelescope" },
+    opts = {
+      signs = false
+    },
     keys = {
-      { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous [t]odo comment" },
-      { "]t", function() require("todo-comments").jump_next() end, desc = "Next [t]odo comment" },
-      { "<leader>tt", "<cmd>TodoTrouble<CR>", desc = "List all project [t]odos" },
-      { "<leader>ft", "<cmd>TodoTelescope<CR>", desc = "Find all [t]odos" },
+      { "[T", function() require("todo-comments").jump_prev() end, desc = "Previous [T]odo comment" },
+      { "]T", function() require("todo-comments").jump_next() end, desc = "Next [T]odo comment" },
+      { "<Leader>tt", "<Cmd>TodoTrouble<CR>", desc = "List all project [t]odos" },
+      { "<Leader>ft", "<Cmd>TodoTelescope<CR>", desc = "Find all [t]odos" },
     },
   },
 
-  -- Visualization of the undo history
   {
     "mbbill/undotree",
+    cmd = "UndotreeToggle",
     opts = {},
     keys = {
-      { "<leader>u", "<cmd>UndotreeToggle<CR>", desc = "[u]ndo tree" },
+      { "<Leader>u", "<Cmd>UndotreeToggle<CR>", desc = "[u]ndo tree" },
     },
     config = function() vim.g["undotree_WindowLayout"] = 2 end,
   },
 
-  -- Comment regions/lines with `gc` and `gcc`
-  { "numToStr/Comment.nvim", opts = {} },
+  {
+    "numToStr/Comment.nvim",
+    event = "BufEnter",
+    opts = {},
+  },
 
-  -- Search panel
   {
     "nvim-pack/nvim-spectre",
+    cmd = "Spectre",
     opts = {},
     keys = {
-      { "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", desc = "Search current [w]ord" },
-      { mode = "v", "<leader>sw", "<esc><cmd>lua require('spectre').open_visual()<CR>", desc = "Search current [w]ord" },
-      { "<leader>sf", "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>", desc = "Search on current [f]ile" },
+      { "<Leader>sw", "<Cmd>Spectre open_visual select_word=true<CR>", desc = "Search current [w]ord" },
+      { mode = "v", "<Leader>sw", "<Esc><Cmd>Spectre open_visual<CR>", desc = "Search current [w]ord" },
+      { "<Leader>sf", "<Cmd>Spectre open_file_search select_word=true<CR>", desc = "Search on current [f]ile" },
     },
   },
 

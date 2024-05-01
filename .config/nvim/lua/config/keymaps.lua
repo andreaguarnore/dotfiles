@@ -14,17 +14,17 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Paste without losing yanked buffer
-vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "[p]aste and keep yank" })
+vim.keymap.set("x", "<Leader>p", "\"_dP", { desc = "[p]aste and keep yank" })
 
 -- Yank to OS clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y", { desc = "[y]ank to OS clipboard" })
-vim.keymap.set("v", "<leader>y", "\"+Y", { desc = "[y]ank to OS clipboard" })
+vim.keymap.set({ "n", "v" }, "<Leader>y", "\"+y", { desc = "[y]ank to OS clipboard" })
+vim.keymap.set("n", "<Leader>Y", "\"+Y", { desc = "[y]ank line to OS clipboard" })
 
 -- Move lines
-vim.keymap.set("n", "<A-j>", "<cmd>m .+1<CR>==")
-vim.keymap.set("n", "<A-k>", "<cmd>m .-2<CR>==")
-vim.keymap.set("i", "<A-j>", "<Esc><cmd>m .+1<CR>==gi")
-vim.keymap.set("i", "<A-k>", "<Esc><cmd>m .-2<CR>==gi")
+vim.keymap.set("n", "<A-j>", "<Cmd>m .+1<CR>==")
+vim.keymap.set("n", "<A-k>", "<Cmd>m .-2<CR>==")
+vim.keymap.set("i", "<A-j>", "<Esc><Cmd>m .+1<CR>==gi")
+vim.keymap.set("i", "<A-k>", "<Esc><Cmd>m .-2<CR>==gi")
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
 
@@ -39,23 +39,29 @@ vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 -- Diagnostics keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [d]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [d]iagnostic message" })
-vim.keymap.set("n", "<leader>de", vim.diagnostic.open_float, { desc = "Show diagnostic [e]rror messages" })
-vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open diagnostic [q]uickfix list" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous [d]iagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next [d]iagnostic message" })
+vim.keymap.set("n", "<Leader>de", vim.diagnostic.open_float, { desc = "Show diagnostic [e]rror messages" })
+vim.keymap.set("n", "<Leader>dq", vim.diagnostic.setloclist, { desc = "Open diagnostic [q]uickfix list" })
 
 -- Move between windows
-vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>")
-vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>")
-vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<CR>")
-vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<CR>")
+vim.keymap.set("n", "<C-h>", "<Cmd>wincmd h<CR>")
+vim.keymap.set("n", "<C-j>", "<Cmd>wincmd j<CR>")
+vim.keymap.set("n", "<C-k>", "<Cmd>wincmd k<CR>")
+vim.keymap.set("n", "<C-l>", "<Cmd>wincmd l<CR>")
+
+-- Move between tabs
+vim.keymap.set("n", "<Leader><Tab><Tab>", "<Cmd>tabnew<CR>", { desc = "New tab" })
+vim.keymap.set("n", "<Leader><Tab>q", "<Cmd>tabclose<CR>", { desc = "[q]uit tab" })
+vim.keymap.set("n", "[t", "<Cmd>tabprevious<CR>", { desc = "Previous [t]ab" })
+vim.keymap.set("n", "]t", "<Cmd>tabnext<CR>", { desc = "Next [t]ab" })
 
 -- Quick toggles
-vim.keymap.set("n", "<leader>ow", "<cmd>set wrap!<CR>", { desc = "Toggle word [w]rap" })
+vim.keymap.set("n", "<Leader>ow", "<Cmd>set wrap!<CR>", { desc = "Toggle word [w]rap" })
 
 -- Save file
-vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
+vim.keymap.set("n", "<C-s>", "<Cmd>w<CR>")
 
 -- Quit
-vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "[q]uit" })
+vim.keymap.set("n", "<Leader>q", "<Cmd>q<CR>", { desc = "[q]uit" })
 

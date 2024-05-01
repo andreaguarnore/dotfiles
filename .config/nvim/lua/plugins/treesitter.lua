@@ -1,10 +1,10 @@
 return {
 
-  -- Syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
     version = false,
     build = ":TSUpdate",
+    event = "VeryLazy",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
@@ -34,9 +34,9 @@ return {
     end
   },
 
-  -- Context of the currently visible buffer contents
   {
     "nvim-treesitter/nvim-treesitter-context",
+    event = "VeryLazy",
     opts = {
       max_lines = 1,
       min_window_height = 30,

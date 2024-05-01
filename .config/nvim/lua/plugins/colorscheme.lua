@@ -1,5 +1,4 @@
 return {
-  -- https://stephango.com/flexoki
   {
     "kepano/flexoki-neovim",
     config = function()

@@ -1,19 +1,19 @@
 return {
 
-  -- Popup showing pending keybinds
   {
     "folke/which-key.nvim",
+    event = "VeryLazy",
     opts = {
       defaults = {
         mode = { "n", "v" },
-        ["<leader>c"] = { name = "+code" },
-        ["<leader>d"] = { name = "+diagnostics" },
-        ["<leader>f"] = { name = "+file/find" },
-        ["<leader>g"] = { name = "+git" },
-        ["<leader>gh"] = { name = "+hunks" },
-        ["<leader>o"] = { name = "+options" },
-        ["<leader>s"] = { name = "+search" },
-        ["<leader>t"] = { name = "+trouble" },
+        ["<Leader><Tab>"] = { name = "+tabs" },
+        ["<Leader>c"] = { name = "+code" },
+        ["<Leader>d"] = { name = "+diagnostics" },
+        ["<Leader>f"] = { name = "+file/find" },
+        ["<Leader>h"] = { name = "+hunks" },
+        ["<Leader>o"] = { name = "+options" },
+        ["<Leader>s"] = { name = "+search" },
+        ["<Leader>t"] = { name = "+trouble" },
       },
     },
     init = function()
@@ -27,10 +27,16 @@ return {
     end
   },
 
-  -- Indentation guides
+  -- {
+  --   "lewis6991/satellite.nvim",
+  --   event = "VeryLazy",
+  --   opts = {},
+  -- },
+
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
+    event = "BufEnter",
     opts = {
       indent = {
         char = "▏",
@@ -38,27 +44,35 @@ return {
     },
   },
 
-  -- statusline
   {
     "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
     opts = {
       options = {
         icons_enabled = true,
         theme = "auto",
-        component_separators = "|",
-        section_separators = "",
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "█", right = "█" },
+      },
+      sections = {
+        lualine_b = {
+          "branch",
+          "diff",
+          "diagnostics",
+        },
+        lualine_x = {
+          "filetype"
+        },
       },
     },
   },
 
-  -- Maximize and restore the current window
   {
     "szw/vim-maximizer",
-    opts = {},
+    event = "VeryLazy",
     keys = {
-      { "<leader>m", "<cmd>MaximizerToggle!<CR>", desc = "[m]aximize window" },
+      { "<Leader>m", "<Cmd>MaximizerToggle!<CR>", desc = "[m]aximize window" },
     },
-    config = function() end,
   },
 
 }

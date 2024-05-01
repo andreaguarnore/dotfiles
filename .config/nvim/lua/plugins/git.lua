@@ -1,41 +1,31 @@
 return {
 
-  -- git decorations and interaction with hunks
   {
     "lewis6991/gitsigns.nvim",
+    event = "BufEnter",
     opts = {
-      signs = {
-        add = { text = "▎" },
-        change = { text = "▎" },
-        delete = { text = "▎" },
-        topdelete = { text = "▎" },
-        changedelete = { text = "▎" },
-        untracked = { text = "▎" },
-      },
-      on_attach = function(buffer)
-        local gs = package.loaded.gitsigns
-
-        local function map(mode, l, r, desc)
-          vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
-        end
-
-        map("n", "]h", gs.next_hunk, "Next [h]unk")
-        map("n", "[h", gs.prev_hunk, "Previous [h]unk")
-        map({ "n", "v" }, "<leader>ghs", "<cmd>Gitsigns stage_hunk<CR>", "[s]tage hunk")
-        map({ "n", "v" }, "<leader>ghr", "<cmd>Gitsigns reset_hunk<CR>", "[r]eset hunk")
-        map("n", "<leader>ghS", gs.stage_buffer, "[S]tage buffer")
-        map("n", "<leader>ghu", gs.undo_stage_hunk, "[u]ndo stage hunk")
-        map("n", "<leader>ghR", gs.reset_buffer, "[R]eset buffer")
-        map("n", "<leader>ghp", gs.preview_hunk_inline, "[p]review hunk")
-        map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "[b]lame line")
-        map("n", "<leader>ghd", gs.diffthis, "[d]iff this")
-        map("n", "<leader>ghD", function() gs.diffthis("~") end, "[D]iff this ~")
-      end,
+      signcolumn = false,
+    },
+    keys = {
+      { "]h", "<Cmd>Gitsigns next_hunk<CR>", desc = "Next [h]unk" },
+      { "[h", "<Cmd>Gitsigns prev_hunk<CR>", desc = "Previous [h]unk" },
+      { mode = { "n", "v" }, "<Leader>hs", "<Cmd>Gitsigns stage_hunk<CR>", desc = "[s]tage hunk" },
+      { mode = { "n", "v" }, "<Leader>hr", "<Cmd>Gitsigns reset_hunk<CR>", desc = "[r]eset hunk" },
+      { "<Leader>hS", "<Cmd>Gitsigns stage_buffer<CR>", desc = "[S]tage buffer" },
+      { "<Leader>hu", "<Cmd>Gitsigns undo_stage_hunk<CR>", desc = "[u]ndo stage hunk" },
+      { "<Leader>hR", "<Cmd>Gitsigns reset_buffer<CR>", desc = "[R]eset buffer" },
+      { "<Leader>hp", "<Cmd>Gitsigns preview_hunk<CR>", desc = "[p]review hunk" },
+      { "<Leader>hb", "<Cmd>Gitsigns blame_line full=true<CR>", desc = "[b]lame line" },
+      { "<Leader>hd", "<Cmd>Gitsigns diffthis<CR>", desc = "[d]iff this" },
+      { "<Leader>hD", "<Cmd>Gitsigns diffthis ~<CR>", desc = "[D]iff this ~" },
+      { "<Leader>ht", "<Cmd>Gitsigns toggle_numhl<CR>", desc = "[t]oggle gutter signs" },
     },
   },
 
-  -- fugitive
-  -- rhubarb
+  {
+    "tpope/vim-fugitive",
+    cmd = "Git",
+  }
 
 }
 

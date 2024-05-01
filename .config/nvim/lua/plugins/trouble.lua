@@ -1,14 +1,14 @@
 return {
-  -- Better diagnostic list
   {
     "folke/trouble.nvim",
+    cmd = { "TroubleToggle", "Trouble" },
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = { use_diagnostic_signs = true },
     keys = {
-      { "<leader>td", "<cmd>TroubleToggle document_diagnostics<CR>", desc = "[d]ocument diagnostics" },
-      { "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<CR>", desc = "[w]orkspace diagnostics" },
-      { "<leader>tl", "<cmd>TroubleToggle loclist<CR>", desc = "[l]ocation list" },
-      { "<leader>tq", "<cmd>TroubleToggle quickfix<CR>", desc = "[q]uickfix list" },
+      { "<Leader>td", "<Cmd>TroubleToggle document_diagnostics<CR>", desc = "[d]ocument diagnostics" },
+      { "<Leader>tw", "<Cmd>TroubleToggle workspace_diagnostics<CR>", desc = "[w]orkspace diagnostics" },
+      { "<Leader>tl", "<Cmd>TroubleToggle loclist<CR>", desc = "[l]ocation list" },
+      { "<Leader>tq", "<Cmd>TroubleToggle quickfix<CR>", desc = "[q]uickfix list" },
       {
         "[q",
         function()
@@ -21,7 +21,7 @@ return {
             end
           end
         end,
-        desc = "Previous trouble/quickfix item",
+        desc = "Previous trouble/[q]uickfix item",
       },
       {
         "]q",
@@ -35,7 +35,7 @@ return {
             end
           end
         end,
-        desc = "Next trouble/quickfix item",
+        desc = "Next trouble/[q]uickfix item",
       },
     },
   },
