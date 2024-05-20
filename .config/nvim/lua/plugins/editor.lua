@@ -25,12 +25,6 @@ return {
   },
 
   {
-    "numToStr/Comment.nvim",
-    event = "BufEnter",
-    opts = {},
-  },
-
-  {
     "nvim-pack/nvim-spectre",
     cmd = "Spectre",
     opts = {},

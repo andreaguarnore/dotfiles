@@ -39,8 +39,6 @@ vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 -- Diagnostics keymaps
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous [d]iagnostic message" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next [d]iagnostic message" })
 vim.keymap.set("n", "<Leader>de", vim.diagnostic.open_float, { desc = "Show diagnostic [e]rror messages" })
 vim.keymap.set("n", "<Leader>dq", vim.diagnostic.setloclist, { desc = "Open diagnostic [q]uickfix list" })
 
@@ -58,6 +56,7 @@ vim.keymap.set("n", "]t", "<Cmd>tabnext<CR>", { desc = "Next [t]ab" })
 
 -- Quick toggles
 vim.keymap.set("n", "<Leader>ow", "<Cmd>set wrap!<CR>", { desc = "Toggle word [w]rap" })
+vim.keymap.set("n", "<Leader>oh", function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, { desc = "Toggle inlay [h]ints" })
 
 -- Save file
 vim.keymap.set("n", "<C-s>", "<Cmd>w<CR>")

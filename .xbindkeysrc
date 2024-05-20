@@ -37,19 +37,6 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
-################
-# mpc commands #
-################
-
-"mpc prev"
-   Control+Control_R + Delete
-
-"mpc toggle"
-   Control+Control_R + End
-
-"mpc next"
-   Control+Control_R + Next
-
 ###################
 # Keyboard layout #
 ###################

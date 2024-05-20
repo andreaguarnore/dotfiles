@@ -14,7 +14,7 @@ return {
         update_in_insert = false,
       },
       inlay_hints = {
-        enabled = false, -- Neovim >= 0.10.0
+        enabled = true,
       },
     },
     keys = {
@@ -23,7 +23,6 @@ return {
       { "gD", vim.lsp.buf.declaration, desc = "Goto [D]eclaration" },
       { "gI", function() require("telescope.builtin").lsp_implementations() end, desc = "Goto [I]mplementation" },
       { "gy", function() require("telescope.builtin").lsp_type_definitions() end, desc = "Goto t[y]pe definition" },
-      { "K", vim.lsp.buf.hover, desc = "Hover documentation" },
       { "<Leader>ca", vim.lsp.buf.code_action, desc = "Code [a]ction" },
       { "<Leader>cr", vim.lsp.buf.rename, desc = "[r]ename variable" },
     },

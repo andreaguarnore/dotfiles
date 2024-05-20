@@ -23,8 +23,8 @@ vim.opt.termguicolors = true
 -- Use block cursor
 vim.opt.guicursor = ""
 
--- Always use sign column
-vim.opt.signcolumn = "yes:1"
+-- Remove sign column
+vim.opt.signcolumn = "no"
 
 -- Relative line numbers
 vim.opt.nu = true

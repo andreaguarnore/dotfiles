@@ -27,11 +27,16 @@ return {
     end
   },
 
-  -- {
-  --   "lewis6991/satellite.nvim",
-  --   event = "VeryLazy",
-  --   opts = {},
-  -- },
+  {
+    "lewis6991/satellite.nvim",
+    event = "BufEnter",
+    opts = {
+      width = 2,
+      handlers = {
+        search = { enable = false },
+      },
+    },
+  },
 
   {
     "lukas-reineke/indent-blankline.nvim",
