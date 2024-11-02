@@ -78,5 +78,13 @@ cyan = "#ebbcba"
 white = "#e0def4"
 
 [keyboard]
-bindings = [{ key = "Return", mods = "Super|Shift", action = "SpawnNewInstance" }]
+bindings = [
+    { key = "Return", mods = "Alt", action = "SpawnNewInstance" },
+    { key = "Space", mods = "Shift|Control", action = "None" }, # unbind default vi toggle bind
+    { key = "Space", mods = "Alt", action = "ToggleViMode" },
+    { key = "Y", mods = "Alt", action = "Copy" },
+    { key = "C", mods = "Alt", action = "Copy" },
+    { key = "P", mods = "Alt", action = "Paste" },
+    { key = "V", mods = "Alt", action = "Paste" },
+]
 

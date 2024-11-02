@@ -1,3 +1,0 @@
-"setxkbmap -layout $(if [[ $(setxkbmap -query | grep layout | awk '{ print $2 }') == "us" ]]; then echo it; else echo us; fi)"
-	Shift_L + Alt_L
-
