@@ -4,7 +4,6 @@ set -gx fish_greeting
 # set theme and prompt
 if status is-interactive
     fish_config theme choose "Rosé Pine"
-    starship init fish | source
 end
 
 # start x on login
